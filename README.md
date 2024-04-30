@@ -1,4 +1,4 @@
-# trab01
+# Pokerina - Your fav Pokedex
 
 A new Flutter project.
 
