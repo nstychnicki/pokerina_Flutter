@@ -46,6 +46,16 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Positioned(
+            top: 15,
+            left: 15,
+            child: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.red, size: 30),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+          Positioned(
             top: 50,
             left: 20,
             child: Text("Pokerina",

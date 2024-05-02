@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pokerina/entrar.dart';
 import 'package:pokerina/home_screen.dart';
 
 void main() {
@@ -12,7 +13,11 @@ class Pokedex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      title: 'POKERINA',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Entrar(title: 'POKERINA'),
     );
   }
 }

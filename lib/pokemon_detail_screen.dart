@@ -242,7 +242,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen> {
                           ),
                           widget.pokemonDetail['next_evolution'] != null
                               ? SizedBox(
-                                  height: 10,
+                                  height: 22,
                                   width: width * 0.55,
                                   child: ListView.builder(
                                       scrollDirection: Axis.horizontal,
@@ -291,7 +291,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen> {
                             child: widget.pokemonDetail['prev_evolution'] !=
                                     null
                                 ? SizedBox(
-                                    height: 10,
+                                    height: 22,
                                     width: width * 0.55,
                                     child: ListView.builder(
                                         scrollDirection: Axis.horizontal,
