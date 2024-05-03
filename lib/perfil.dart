@@ -9,7 +9,11 @@ class Perfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title,
+            style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
         backgroundColor: Colors.red,
       ),
       body: Center(
@@ -80,6 +84,12 @@ class Perfil extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => HomeScreen()),
                   );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Usuário cadastrado com sucesso!'),
+                      duration: Duration(seconds: 3),
+                    ),
+                  );
                 },
                 child: Text('Cadastrar', style: TextStyle(color: Colors.white)),
               ),
@@ -88,6 +98,7 @@ class Perfil extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        height: 100,
         color: Colors.red,
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -95,7 +106,7 @@ class Perfil extends StatelessWidget {
             'Pokerina',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20.0,
+              fontSize: 25.0,
             ),
             textAlign: TextAlign.center,
           ),

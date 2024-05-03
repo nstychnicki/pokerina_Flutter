@@ -13,11 +13,13 @@ class Pokedex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'POKERINA',
+      title: ('POKERINA'),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Entrar(title: 'POKERINA'),
+      home: Entrar(
+        title: 'POKERINA',
+      ),
     );
   }
 }

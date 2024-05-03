@@ -10,7 +10,11 @@ class Entrar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title,
+            style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
         backgroundColor: Colors.red,
       ),
       body: Center(
@@ -20,12 +24,16 @@ class Entrar extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red, // background color
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                padding: EdgeInsets.symmetric(horizontal: 85, vertical: 20),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
-              child: Text('ENTRAR', style: TextStyle(color: Colors.white)),
+              child: Text('ENTRAR',
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -34,7 +42,9 @@ class Entrar extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(height: 20), // Adiciona um espaçamento de 20 pixels
+            SizedBox(
+              height: 20,
+            ), // Adiciona um espaçamento de 20 pixels
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red, // background color
@@ -43,12 +53,18 @@ class Entrar extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
-              child: Text('CRIAR CONTA', style: TextStyle(color: Colors.white)),
+              child: Text('CRIAR CONTA',
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Perfil(title: 'PERFIL')),
+                      builder: (context) => Perfil(
+                            title: 'PERFIL',
+                          )),
                 );
               },
             ),

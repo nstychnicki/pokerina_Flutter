@@ -15,18 +15,26 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
   var PokeApi =
       "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
   late List pokedex;
+  late TabController _tabController;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     if (mounted) {
       fetchPokemonData();
     }
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -56,8 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Positioned(
-            top: 50,
-            left: 20,
+            top: 20,
+            left: 110,
             child: Text("Pokerina",
                 style: TextStyle(
                     fontSize: 40,
@@ -65,10 +73,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.black)),
           ),
           Positioned(
+            top: 100,
+            left: 0,
+            right: 0,
+            child: TabBar(
+              controller: _tabController,
+              tabs: [
+                Tab(text: "Pokedex"),
+                Tab(text: "Favoritos"),
+              ],
+            ),
+          ),
+          Positioned(
             top: 150,
             bottom: 0,
             width: width,
-            child: Column(
+            child: TabBarView(
+              controller: _tabController,
               children: [
                 pokedex != null
                     ? Expanded(
@@ -240,7 +261,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Center(
                         child: CircularProgressIndicator(),
-                      )
+                      ),
+                Container(color: Colors.white),
               ],
             ),
           ),
@@ -256,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (value.statusCode == 200) {
         var decodedJsonData = jsonDecode(value.body);
         pokedex = decodedJsonData['pokemon'];
-        print(pokedex[1]['name']);
+        //print(pokedex[1]['name']);
         setState(() {});
       }
     });
